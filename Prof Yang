@@ -1,0 +1,11 @@
+- Exact Diagonalization code of 10.97.169.13 (1st workstation)
+/home/yangbo/petsc-3.18.0/arch-linux-cxx-debug/bin/mpirun -n 20 ./main -o 18 -e 6 -f a -l2 0.00001 -nev 10 -eps_nev 10 -eps_ncv 30 -eps_mpd 30 -eps_max_it 100000000 -shift 1 -eps_tol 1e-14 -nz 1000 -v1 1000000 -v3 1
+
+Note: the L2 could be settled to be 0, the eigenvalues we get after the ED procedure is the 'H+L^2'. If we set the l2 to be non-zero, 
+we need to subtract the l(l+1) from the values we get directly to obtain the exact energy eigenvalues. The number we set is the value of l.
+
+The larger the Hilbert spacs, the bigger the value of -nz we should set. But the greater the -nz value, the code will use more memory.
+
+- Sources 10.97.169.13
+ /media/sdb2/Wavefunctions
+  a lot of wavefunctions for large systems
