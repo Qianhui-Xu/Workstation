@@ -9,6 +9,18 @@ Programms library contains tools for working with many-body wavefunction. Used i
 The main power of this library is in the class FQH_states.fqh_state
 See documentation.ipynb for the documentation.
 
+Use Trung's codes:
+- python3
+- import sys
+- sys.path.append("/home/trung/_qhe-library/")
+eg.
+- import FQH_states as FQH
+- myjack=FQH.fqh_state("j0")
+- myjack=......("j1")
+- jortho=orthonormalize ([myjack, myjack2,...])
+- for i in range(len(jortho)):
+-   jortho[i].printwf(f"a{i}")     (note: f points the string)
+
 /media/sdd2/Jack_polynomials
 Different Jacks of Laughlin and Moore-Read
 
@@ -28,3 +40,4 @@ To normalize it we have to integrate ψ*(z)ψ(z) over the appropriate geometry (
 We can use state.sphere_normalize() or state.disk_normalize()
 Orthonormalize:
 The jacks we get are not orthogonal, to form a series of basis, we need to orthogonalize them.
+
