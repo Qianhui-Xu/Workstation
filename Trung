@@ -1,0 +1,30 @@
+/media/sdd2/routines/one_body_potential/disk_potential_pins
+Localisation of the quasiholes on disk (workstation 1)
+
+/media/sdd2/routines/Julia_routines/flux_insertion
+Localisation of the quasiholes on sphere (not sure, need checking)
+
+/media/sdd2/Routines/_qhe-library
+Programms library contains tools for working with many-body wavefunction. Used in FQHE.
+The main power of this library is in the class FQH_states.fqh_state
+See documentation.ipynb for the documentation.
+
+/media/sdd2/Jack_polynomials
+Different Jacks of Laughlin and Moore-Read
+
+ssh -L 8080:localhost:8080 qianhui@ipaddress (address need to be changed to the workstation address)
+How to open the Jupyter notebook from terminal. Readme.txt
+Sometimes we need to change the '8080' according to the notice
+
+
+Use different polynomials to generate a Hilbert space, whose basis are these Jacks. 
+Then diagonalize the Hamiltonian inside this Hilbert space to get the ground state energy of the special Hamiltonian.
+The whole procedure should be: 
+Jack polynomial -- change it to exact geometry (sphere/disk) -- orthonormalize -- change the binary to decimal -- calculate the expectvalue
+
+Change Jacks to exact geometry:
+A state generated with jack is just a pure polynomial. For example for two particle laughlin state it’s (z1-z2)^3. 
+To normalize it we have to integrate ψ*(z)ψ(z) over the appropriate geometry (sphere/disk).
+We can use state.sphere_normalize() or state.disk_normalize()
+Orthonormalize:
+The jacks we get are not orthogonal, to form a series of basis, we need to orthogonalize them.
