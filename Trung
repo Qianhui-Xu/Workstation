@@ -9,24 +9,28 @@ Programms library contains tools for working with many-body wavefunction. Used i
 The main power of this library is in the class FQH_states.fqh_state
 See documentation.ipynb for the documentation.
 
+
+/media/sdd2/Jack_polynomials
+Different Jacks of Laughlin and Moore-Read
+
+
+ssh -L 8080:localhost:8080 qianhui@ipaddress (address need to be changed to the workstation address)
+How to open the Jupyter notebook from terminal. Readme.txt
+Sometimes we need to change the '8080' according to the notice
+
+
 Use Trung's codes:
 - python3
 - import sys
 - sys.path.append("/home/trung/_qhe-library/")
 eg.
 - import FQH_states as FQH
-- myjack=FQH.fqh_state("j0")
-- myjack=......("j1")
+- myjack1=FQH.fqh_state("j1")
+- myjack2=......("j2")
+- ......
 - jortho=orthonormalize ([myjack, myjack2,...])
 - for i in range(len(jortho)):
 -   jortho[i].printwf(f"a{i}")     (note: f points the string)
-
-/media/sdd2/Jack_polynomials
-Different Jacks of Laughlin and Moore-Read
-
-ssh -L 8080:localhost:8080 qianhui@ipaddress (address need to be changed to the workstation address)
-How to open the Jupyter notebook from terminal. Readme.txt
-Sometimes we need to change the '8080' according to the notice
 
 
 Use different polynomials to generate a Hilbert space, whose basis are these Jacks. 
